@@ -1,0 +1,129 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix mh: <http://example.org/mental_health#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mh:hasAge a owl:DatatypeProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range xsd:integer .
+
+mh:hasAlcoholConsumption a owl:ObjectProperty ;
+    rdfs:domain mh:Lifestyle ;
+    rdfs:range mh:AlcoholConsumption .
+
+mh:hasConsultationHistory a owl:ObjectProperty ;
+    rdfs:domain mh:MentalHealth ;
+    rdfs:range mh:Consultation .
+
+mh:hasCountry a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:Country ;
+    owl:equivalentProperty wd:P17 .
+
+mh:hasDietQuality a owl:ObjectProperty ;
+    rdfs:domain mh:Lifestyle ;
+    rdfs:range mh:DietQuality .
+
+mh:hasGender a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:Gender .
+
+mh:hasLifestyle a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:Lifestyle .
+
+mh:hasMedicationUsage a owl:ObjectProperty ;
+    rdfs:domain mh:MentalHealth ;
+    rdfs:range mh:Medication .
+
+mh:hasMentalHealth a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:MentalHealth .
+
+mh:hasOccupation a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:Occupation .
+
+mh:hasPhysicalActivityHours a owl:DatatypeProperty ;
+    qb:measure "Physical Activity Hours" ;
+    rdfs:domain mh:Measurement ;
+    rdfs:range xsd:integer .
+
+mh:hasSeverity a owl:ObjectProperty ;
+    rdfs:domain mh:MentalHealth ;
+    rdfs:range mh:Severity .
+
+mh:hasSleepHours a owl:DatatypeProperty ;
+    qb:measure "Sleep Hours" ;
+    rdfs:domain mh:Measurement ;
+    rdfs:range xsd:float .
+
+mh:hasSmokingHabit a owl:ObjectProperty ;
+    rdfs:domain mh:Lifestyle ;
+    rdfs:range mh:SmokingHabit .
+
+mh:hasSocialMediaUsage a owl:DatatypeProperty ;
+    qb:measure "Social Media Usage" ;
+    rdfs:domain mh:Measurement ;
+    rdfs:range xsd:float .
+
+mh:hasStressLevel a owl:ObjectProperty ;
+    rdfs:domain mh:MentalHealth ;
+    rdfs:range mh:StressLevel .
+
+mh:hasWorkHours a owl:DatatypeProperty ;
+    qb:measure "Work Hours" ;
+    rdfs:domain mh:Measurement ;
+    rdfs:range xsd:integer .
+
+ex:hasMeasurement a owl:ObjectProperty ;
+    rdfs:domain mh:Person ;
+    rdfs:range mh:Measurement .
+
+mh:AlcoholConsumption a owl:Class .
+
+mh:Consultation a owl:Class .
+
+mh:Country a owl:Class ;
+    skos:inScheme mh:CountryHierarchy .
+
+mh:CountryHierarchy a skos:ConceptScheme ;
+    rdfs:label "Country Hierarchy" .
+
+mh:DietQuality a owl:Class .
+
+mh:Gender a owl:Class .
+
+mh:Medication a owl:Class .
+
+mh:Occupation a owl:Class .
+
+mh:Severity a owl:Class ;
+    skos:inScheme mh:SeverityHierarchy .
+
+mh:SeverityHierarchy a skos:ConceptScheme .
+
+mh:SmokingHabit a owl:Class .
+
+mh:StressLevel a owl:Class .
+
+mh:Lifestyle a owl:Class ;
+    rdfs:label "Lifestyle"@en ;
+    rdfs:comment "Captures lifestyle factors like diet, smoking." .
+
+mh:Measurement a qb:DataStructureDefinition ;
+    rdfs:label "Measurement"@en ;
+    rdfs:comment "Multidimensional measurements for OLAP." .
+
+mh:MentalHealth a owl:Class ;
+    rdfs:label "Mental Health"@en ;
+    rdfs:comment "Captures mental health condition details." .
+
+mh:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "Represents an individual with demographic attributes." .
+
