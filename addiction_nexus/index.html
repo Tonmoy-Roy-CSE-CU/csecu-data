@@ -3,20 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Addiction Nexus Ontology</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    h1 { color: #2c3e50; }
+    h2 { color: #34495e; }
+    code { background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
+    ul { list-style-type: square; }
+    img { max-width: 100%; height: auto; margin: 10px 0; border: 1px solid #ddd; }
+    .caption { font-style: italic; color: #7f8c8d; font-size: 0.9em; }
+  </style>
 </head>
 <body>
   <h1>Addiction Nexus Ontology</h1>
-  <p>Namespace: <code>http://csecu-data.org/addiction_nexus#</code></p>
+  <p>Namespace: <code>http://tonmoyroy.org/addiction_nexus#</code></p>
   <p>This ontology models behavioral, neurophysiological, and socioeconomic factors related to addiction.</p>
 
   <h2>Downloads</h2>
   <ul>
-    <li><a href="tbox.ttl">TBox (.ttl)</a></li>
-    <li><a href="abox.ttl">ABox (.ttl)</a></li>
+    <li><a href="https://zenodo.org/records/16881404/files/snowflake_schema_tbox_improved2_v2.ttl">TBox (.ttl)</a></li>
+    <li><a href="https://zenodo.org/records/16881404/files/snowflake_schema_abox_improved2_v2.ttl">ABox (.ttl)</a></li>
   </ul>
 
   <h2>Metadata</h2>
-  <p>Version: 1.0</p>
+  <p>Version: 2.0</p>
   <p>Created: 2025-08-16</p>
+  <p>Updated: 2025-08-19</p>
+  <p>DOI: <a href="https://doi.org/10.5281/zenodo.16881404">10.5281/zenodo.16881404</a></p>
+
+  <h2>Benchmark Visualizations</h2>
+  <h3>Query Efficiency</h3>
+  <img src="query_efficiency.png" alt="Query Efficiency Chart">
+  <p class="caption">Execution times for roll-up, drill-down, slice, and dice SPARQL queries on the 50,000-record dataset.</p>
+
+  <h3>Scalability Performance</h3>
+  <img src="scalability_performance.png" alt="Scalability Performance Chart">
+  <p class="caption">Execution times of queries across dataset sizes (10,000; 25,000; 50,000 records) on a Virtuoso instance.</p>
+
+  <h2>Notes</h2>
+  <p>This ontology is designed for OLAP analytics and knowledge graph exploration. Benchmark data was generated using a local Virtuoso instance (Intel Core i5-8250U, 8 GB RAM, SSD) and reflects performance as of August 19, 2025. The namespace has been updated from <code>http://csecu-data.org/addiction_nexus#</code> to <code>http://tonmoyroy.org/addiction_nexus#</code> to ensure resolvability, with version details managed in metadata (e.g., owl:versionInfo).</p>
 </body>
 </html>
